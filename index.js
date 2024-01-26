@@ -1,5 +1,5 @@
 let player = {
-    name: "Per",
+    name: "Player",
     chips: 200
 }
 
@@ -60,7 +60,7 @@ function renderGame() {
             playerEl.textContent = player.name + ": $" + player.chips
             if (player.chips === 0){
                 stopGame = true
-                message = "Sorry, you have no more balance to continue."
+                message = "Sorry, you have no more balance to continue.Please restart the game."
             }
         }
         messageEl.textContent = message
@@ -74,4 +74,11 @@ function newCard() {
         cards.push(card)
         renderGame()        
     }
+}
+
+function restartGame(){
+    isAlive = true
+    player.chips = 200
+    stopGame = false
+
 }
